@@ -49,8 +49,7 @@ If you are using the lazy, then you can install and configure the plugin like th
 
 (λ config []
   (let [plugin (require :no-clown-fiesta)]
-    (plugin.setup opts)
-    (plugin.load)))
+    (plugin.load opts)))
 
 {1 :aktersnurra/no-clown-fiesta.nvim :lazy false :priority 1000 : config}
 ```
@@ -69,8 +68,7 @@ local opts = {
 
 local function config()
   local plugin = require "no-clown-fiesta"
-  plugin.setup(opts)
-  return plugin.load()
+  return plugin.load(opts)
 end
 
 return {
@@ -116,3 +114,11 @@ This plugin supports three different themes:
 - WhichKey
 - mini.statusline
 - DiffView
+
+### Lualine
+
+Enable theme by setting the `theme` options in the lualine options, e.g.:
+
+```fnl
+(local opts {:options {:theme :no-clown-fiesta}})
+```

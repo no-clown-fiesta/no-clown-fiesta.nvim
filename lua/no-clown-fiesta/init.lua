@@ -7,7 +7,8 @@ function M.setup(opts)
   end
 end
 
-function M.load()
+function M.load(opts)
+  M.setup(opts)
   local settings = require "no-clown-fiesta.settings"
   local opts = settings.opts
 
